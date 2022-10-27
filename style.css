@@ -16,6 +16,20 @@
     grid-column: 1 / 2;
 }
 
+.left-sec h1 {
+    color: white;
+    text-align: center;
+    padding-top: 3rem;
+  }
+  
+  .left-inside {
+      color: white;
+      height: 78%;
+      margin: 3rem 3rem 3rem 3rem;
+      background-color: #F8CEDD;
+  }
+  
+
 .top-right {
     background-color: #C48B9F;
     grid-row: 1 / 2;
