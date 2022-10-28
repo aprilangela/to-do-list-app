@@ -35,7 +35,33 @@
     grid-row: 1 / 2;
     grid-column: 2 / 4;
 }
+.top-right p {
+    background-color: #FFEEFF;
+    height: 2.5rem;
+    color: #C48B9F;
+    padding:0.5rem;
+    text-align: center;
+    font-weight: 800;
+}
 
+
+    /* task layout */
+    .flex-parent {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+      }
+      
+    .flex-item {
+        padding: .3em; 
+        background: #F8BBD0;
+        height: 10rem;
+        font-size: 1.5rem;
+       
+      }
+    
+    
+   
 .bottom-right {
     background-color: #F8BBD0;
     grid-row: 2 / 4;
