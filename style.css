@@ -44,3 +44,14 @@
 h1{
     color: blue;
 }
+.btn-primary {
+    color: #fff;
+    background-color: salmon;
+    border-color: salmon;
+  }
+
+  .btn-primary:hover {
+    background-color: rgba(235, 178, 171, 0.963);
+    border-color: rgba(235, 178, 171, 0.963);
+  }
+  
