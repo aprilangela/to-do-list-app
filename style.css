@@ -86,6 +86,12 @@ h1{
     border-color: rgba(235, 178, 171, 0.963);
   }
 
+
+
+  label{
+    background-color: #F8CEDD;
+}
+
 @media only screen and (max-width:522px) {
     .left-sec {
         display: none;
@@ -93,7 +99,3 @@ h1{
 
 }
   
-
-  label{
-    background-color: #F8CEDD;
-}
