@@ -10,39 +10,46 @@
     justify-content: center;
 }
 
+body {
+    background-position:center;
+    background-size: cover;
+    background-attachment: fixed;
+    /*background-position: 50% 50%;*/
+    background-image: url('images/laptop-2434393_1280.jpg');
+    
+}  
 
 .left-sec {
-    background-color: #CF9BAE;
+    background-color: #afbdd8;
     grid-row: 1 / 4;
     grid-column: 1 / 3;
     min-width: 305px;
-    
-
 }
 
 .left-sec h1 {
     color: white;
     text-align: center;
-    padding-top: 3rem;
+    padding-top: 2rem;
   }
   
-  .left-inside {
+  .card {
       color: white;
-      height: 43rem;
-      margin: 3rem 3rem 3rem 3rem;
-      background-color: #F8CEDD;
-      text-align: center;
+      height: 40rem;
+      margin: 1rem 1rem 1rem 1rem;
+      background-color: #d7e1f8;
+      /*background-position:center;*/
+      background-size: cover;
+      /*background-attachment: fixed;*/
+      background-image: url('Images/stack1.jpg');
+      
   }
 
-  .left-inside h5 {
-    margin-top: 3rem;
-    padding-top: 3rem;
-    
+  .card h5 {
+    padding-top: 1rem;
+    text-align: center;
 }
   
-.image {
-    padding: 2rem;    
-  }
+
 
 .top-right {
     background-color: #C48B9F;
