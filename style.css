@@ -11,24 +11,33 @@
     max-width: 700px;
 }
 
+body {
+    background-position:center;
+    background-size: cover;
+    background-attachment: fixed;
+    /*background-position: 50% 50%;*/
+    background-image: url('images/laptop-2434393_1280.jpg');
+    
+}  
 
 .left-sec {
+
     background-color: #CF9BAE;
     grid-row: 1 / 2;
     grid-column: ;
-    min-width: 305px;
-    
 
+    min-width: 305px;
 }
 
 .left-sec h1 {
     color: white;
     text-align: center;
-    padding-top: 3rem;
+    padding-top: 2rem;
   }
   
-  .left-inside {
+  .card {
       color: white;
+
       height: 37rem;
       margin: 3rem 3rem 3rem 3rem;
       background-color: #F8CEDD;
