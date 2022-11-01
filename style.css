@@ -40,13 +40,16 @@ body {
       /*background-position:center;*/
       background-size: cover;
       /*background-attachment: fixed;*/
-      background-image: url('Images/stack1.jpg');
+      background-image: url('Images/stack3.jpg');
       
   }
 
-  .card h5 {
-    padding-top: 1rem;
+  .card h4 {
+    padding: 1rem;
     text-align: center;
+    color: white;
+    text-shadow: 2px 2px 5px #1490ca;
+    /*border-style: groove;*/
 }
   
 
