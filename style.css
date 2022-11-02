@@ -11,24 +11,6 @@
     max-width: 700px;
 }
 
-/*body {
-    background-position:center;
-    background-size: cover;
-    background-attachment: fixed;
-    /*background-position: 50% 50%;
-    background-image: url('images/journal-791286_1920.jpg');
-    
-}*/
-
-h {
-    font-family: Helvetica;
-    font-size: 50px;
-    font-weight: bold;
-    color: white;
-    text-align: center;
-    background-image: url('Images/banner.jpg');
-    background-size: cover;
-}
 
 .banner h5{
 
@@ -47,14 +29,7 @@ h {
     /*min-width: 305px;*/
 }
 
-/*.banner h5 {
-    color: white;
-    text-align: center;
-    padding-top: 2rem;
-  }*/
-  
-
-  
+ 
 
 
 .top-right {
