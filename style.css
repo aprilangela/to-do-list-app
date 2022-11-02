@@ -11,49 +11,63 @@
     max-width: 700px;
 }
 
-body {
+/*body {
     background-position:center;
     background-size: cover;
     background-attachment: fixed;
-    /*background-position: 50% 50%;*/
-    background-image: url('images/laptop-2434393_1280.jpg');
+    /*background-position: 50% 50%;
+    background-image: url('images/journal-791286_1920.jpg');
     
-}  
+}*/
 
-.left-sec {
-
-    background-color: #CF9BAE;
-    grid-row: 1 / 2;
-    grid-column: ;
-
-    min-width: 305px;
+h {
+    font-family: Helvetica;
+    font-size: 50px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    background-image: url('Images/banner.jpg');
+    background-size: cover;
 }
 
-.left-sec h1 {
+.banner h5{
+
+    /*background-color: #bec1e2;*/
+    /*grid-row: 1 / 2;*/
+    /*grid-column: ;*/
+    background-image: url('Images/banner.jpg');
+    background-size: cover;
+    font-family: Helvetica;
+    font-size: 5rem;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    min-height: 15rem;
+    padding-top: 5rem;
+    /*min-width: 305px;*/
+}
+
+/*.banner h5 {
     color: white;
     text-align: center;
     padding-top: 2rem;
-  }
-  
-  .card {
-      color: white;
-
-}
+  }*/
   
 
   
 
 
 .top-right {
-    background-color: #C48B9F;
+    background-color: #cbd3f0;
     grid-row: 1 / 2;
     grid-column: 3 / 6;
     min-width: 305px;
+    
    
 }
 .task-title{
-    color:#C48B9F;
-    background-color:#F8CEDD;
+    color:#bad3f4;
+    background-color:#ced8f8;
     text-align: center;
     height: 2rem;
   
@@ -70,7 +84,7 @@ body {
 
 
 .bottom-right {
-    background-color: #F8BBD0;
+    background-color: #bbcdf8;
     grid-row: 2 / 4;
     grid-column: 3 / 6;
     min-width: 305px;
@@ -78,7 +92,7 @@ body {
 }
 
 h1{
-    color: blue;
+    color: rgba(35, 35, 174, 0.678);
     text-align: center;
 }
 
@@ -86,17 +100,17 @@ h1{
 
 .btn-primary {
     color: #fff;
-    background-color: salmon;
-    border-color: salmon;
+    background-color: rgb(223, 223, 245);
+    border-color: rgb(217, 218, 245);
   }
 
   .btn-primary:hover {
-    background-color: rgba(235, 178, 171, 0.963);
-    border-color: rgba(235, 178, 171, 0.963);
+    background-color: rgba(191, 187, 234, 0.963);
+    border-color: rgba(191, 187, 234, 0.963);
   }
 
 label {
-    background-color: #F8CEDD;
+    background-color: #ced9f8;
 }
 
 
