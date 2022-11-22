@@ -11,23 +11,13 @@
     max-width: 700px;
 }
 
-/*body {
-    background-position:center;
-    background-size: cover;
-    background-attachment: fixed;
-    /*background-position: 50% 50%;
-    background-image: url('images/journal-791286_1920.jpg');
-    
-}*/
 
-h {
-    font-family: Helvetica;
-    font-size: 50px;
-    font-weight: bold;
-    color: white;
-    text-align: center;
-    background-image: url('Images/banner.jpg');
+.banner {
+    background-image: url('Images/office.jpg');
     background-size: cover;
+    /*max-width: 640px;*/
+    /*max-height: 300px;*/
+    
 }
 
 .banner h5{
@@ -35,26 +25,19 @@ h {
     /*background-color: #bec1e2;*/
     /*grid-row: 1 / 2;*/
     /*grid-column: ;*/
-    background-image: url('Images/banner.jpg');
-    background-size: cover;
+    
     font-family: Helvetica;
     font-size: 5rem;
     font-weight: bold;
-    color: white;
+    color: rgb(235, 237, 242);
     text-align: center;
-    min-height: 15rem;
     padding-top: 5rem;
-    /*min-width: 305px;*/
+    
 }
 
-/*.banner h5 {
-    color: white;
-    text-align: center;
-    padding-top: 2rem;
-  }*/
-  
-
-  
+.card-img {
+    max-width: 12rem;
+}
 
 
 .top-right {
@@ -66,10 +49,13 @@ h {
    
 }
 .task-title{
-    color:#bad3f4;
+    color:#84aee6;
     background-color:#ced8f8;
     text-align: center;
     height: 2rem;
+    font-weight: bold;
+    font-size: larger;
+    
   
 }
 
@@ -92,7 +78,7 @@ h {
 }
 
 h1{
-    color: rgba(35, 35, 174, 0.678);
+    color: rgba(247, 248, 250, 0.901);
     text-align: center;
 }
 
@@ -106,7 +92,7 @@ h1{
 
   .btn-primary:hover {
     background-color: rgba(191, 187, 234, 0.963);
-    border-color: rgba(191, 187, 234, 0.963);
+    border-color: rgba(135, 132, 169, 0.963);
   }
 
 label {
