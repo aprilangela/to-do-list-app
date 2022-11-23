@@ -10,5 +10,15 @@ function updateClock() {
 
 updateClock();
 
-// function validate from
+
+
+
+
+
+
+// reset button for input form
+const reset = document.querySelector("#btnReset");
+reset.addEventListener("click", function () {
+  document.querySelector("#form").reset();
+});
 

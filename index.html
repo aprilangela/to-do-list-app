@@ -210,52 +210,64 @@
         <div class="modal-content">
           <div class="modal-header">
             <h1 class="modal-title" id="exampleModalLabel">New Task</h1>
-         
           </div>
           <div class="modal-body">
-            <form>
+            <form id="form">
               <div class="mb-3">
-                <label for="name" class="col-form-label"
-                  >Name:</label
-                >
-                <input type="text" class="form-control" id="name" />
+                <label for="name" class="col-form-label">Name:</label>
+                <input type="text" class="form-control" id="name-input" />
+                <span id="name-error" class="text-danger"></span>
               </div>
+              
               <div class="mb-3">
-                <label for="message-text" class="col-form-label"
+                <label for="description-input" class="col-form-label"
                   >Description:</label
                 >
-                <textarea class="form-control" id="message-text"></textarea>
+                <textarea
+                  class="form-control"
+                  id="description-input"
+                ></textarea>
+                <div class="mb-3">
+                  <label for="assigned-input" class="col-form-label">Assigned To:</label>
+                  <input type="text" class="form-control" id="assigned-input" />
+                  <span id="assigned-error" class="text-danger"></span>
+                </div>
+                <span id="description-error" class="text-danger"></span>
               </div>
               <div class="mb-3">
-                <label for="dueDate" class="col-form-label"
-                  >Due Date:</label
+                <label for="dueDate-input" class="col-form-label"
+                  >Due Date:</label 
                 >
-                <input type="date" class="form-control" id="dueDat" />
-          <label for="status" class="col-form-label"
-                  >Status:</label
-                >
-                <select id="input-asign" class =" form-control">
-                  <option disabled select value="0">Please choose one</option>
+                <input type="date" class="form-control" id="dueDate-input" />
+                <span id="dueDate-error" class="text-danger"></span>
+                <label for="status-input" class="col-form-label">Status:</label>
+                <select id="status-input" class="form-control">
+                  <option disabled selected value="0">Please choose one</option>
                   <option value="1">To Do</option>
                   <option value="2">In Progress</option>
                   <option value="3">Review</option>
                   <option value="3">Done</option>
                 </select>
+                <span id="status-error" class="text-danger"></span>
               </div>
-
             </form>
           </div>
+          
           <div class="modal-footer">
             <button
+              id="close"
               type="button"
               class="btn btn-primary"
               data-bs-dismiss="modal"
             >
               Close
             </button>
-            <button type="button" id="btnReset" class="btn btn-primary">Reset</button>
-            <button type="button" id="btnSubmit" class="btn btn-primary">Create task</button>
-            
+            <button type="button" id="btnReset" class="btn btn-primary">
+              Reset
+            </button>
+            <button type="button"  id="btnSubmit" class="btn btn-primary">
+              Create task
+            </button>
           </div>
         </div>
       </div>
