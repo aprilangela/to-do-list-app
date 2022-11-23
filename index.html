@@ -48,7 +48,7 @@
                   <div class="card-body">
                     <h5 class="card-title">Title:wireframe</h5>
                     <p class="card-text">
-                      This task is assigned to teamA mansger: finish the
+                      This task is assigned to team mansger: finish the
                       wireframe for to-do-list app
                     </p>
                     <p class="card-text">
@@ -214,35 +214,36 @@
           <div class="modal-body">
             <form id="form">
               <div class="mb-3">
-                <label for="name-task" class="col-form-label">Name of task:</label>
-                <input type="text" class="form-control" id="name-task-input" />
-                <span id="name-error" class="text-danger"></span>
+                <label for="name-task-input" class="col-form-label">Name of task:</label>
+                <input type="text" placeholder="Enter name with at least 8 characters" class="form-control" id="name-task-input" />
+                <span id="name-task-error"" class="text-danger"></span>
               </div>
               
               <div class="mb-3">
-                <label for="description-input" class="col-form-label"
+                <label for="description-task-input"" class="col-form-label"
                   >Description:</label
                 >
                 <textarea
+                placeholder="Enter description with at least 15 characters"
                   class="form-control"
-                  id="description-input"
-                ></textarea>
+                  id="description-task-input"
+                ></textarea> 
+                <span id="description-task-error" class="text-danger"></span>
                 <div class="mb-3">
-                  <label for="assigned-input" class="col-form-label">Assigned To:</label>
-                  <input type="text" class="form-control" id="assigned-input" />
-                  <span id="assigned-error" class="text-danger"></span>
+                  <label for="assigned-to-task-input" class="col-form-label">Assigned To:</label>
+                  <input placeholder="Enter name with at least 8 characters" type="text" class="form-control" id="assigned-to-task-input" />
+                  <span id="assigned-to-task-error" class="text-danger"></span>
                 </div>
-                <span id="description-error" class="text-danger"></span>
               </div>
               <div class="mb-3">
-                <label for="dueDate-input" class="col-form-label"
+                <label for="due-date-input" class="col-form-label"
                   >Due Date:</label 
                 >
-                <input type="date" class="form-control" id="dueDate-input" />
-                <span id="dueDate-error" class="text-danger"></span>
+                <input type="date" class="form-control" id="due-date-input" />
+                <span id="due-date-error" class="text-danger"></span>
                 <label for="status-input" class="col-form-label">Status:</label>
                 <select id="status-input" class="form-control">
-                  <option disabled selected value="0">Please choose one</option>
+                  <option id="disabled-select" disabled selected value="0">Please choose one</option>
                   <option value="1">To Do</option>
                   <option value="2">In Progress</option>
                   <option value="3">Review</option>

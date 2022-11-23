@@ -110,3 +110,7 @@ h1{
   }
 
 
+.btn-primary:click{
+    background-color: rgba(191, 187, 234, 0.963);
+    border-color: rgba(191, 187, 234, 0.963);
+} 
