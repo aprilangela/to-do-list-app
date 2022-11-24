@@ -25,7 +25,8 @@ function validateTaskForm() {
     document.getElementById("name-task-input").style.borderColor = "red";
     document.getElementById("name-task-error").innerHTML =
       "Task name must be at least 8 characters long";
-    
+    document.getElementById("name-task-input").style.borderColor = "red";
+    document.getElementById("name-task-input").placeholder = "";
   } else {
     document.getElementById("name-task-input").style.borderColor = "green";
     document.getElementById("name-task-error").innerHTML = "";
@@ -35,7 +36,7 @@ function validateTaskForm() {
     document.getElementById("description-task-input").style.borderColor = "red";
     document.getElementById("description-task-error").innerHTML =
       "Task description must be at least 15 characters long";
-  
+    document.getElementById("description-task-input").placeholder = "";
   } else {
     document.getElementById("description-task-input").style.borderColor =
       "green";
@@ -44,57 +45,55 @@ function validateTaskForm() {
 
   if (assignedTo.value.length < 8) {
     document.getElementById("assigned-to-task-input").style.borderColor = "red";
-    document.getElementById("assigned-to-task-error").innerHTML = "Assignee must be at least 8 characters long";
-   
+    document.getElementById("assigned-to-task-error").innerHTML =
+      "Assignee must be at least 8 characters long";
+    document.getElementById("assigned-to-task-input").placeholder = "";
   } else {
     document.getElementById("assigned-to-task-error").innerHTML = "";
     document.getElementById("assigned-to-task-input").style.borderColor =
       "green";
-}
-if (dueDate.value < new Date().toISOString().split("T")[0]) {
-  document.getElementById("due-date-task-input").style.borderColor = "red";
-  document.getElementById("due-date-task-error").innerHTML =
-    "Due date must be in the future";
-  document.getElementById("due-date-task-input").placeholder = "";
-
-} else {
-  document.getElementById("due-date-task-input").style.borderColor = "green";
-  document.getElementById("due-date-task-error").innerHTML = "";
-}
-
-
-if (status.value ==="0") {
-  document.getElementById("status-task-input").style.borderColor = "red";
-  document.getElementById("status-task-error").innerHTML =
-    "Status must be selected";
-  document.getElementById("status-task-input").placeholder = "";
-} else {
-  document.getElementById("status-task-error").innerHTML = "";
-  document.getElementById("status-task-input").style.borderColor = "green";
-  document.getElementById("status-task-input").placeholder = "";
-}
-
-}
-
-
-
-  // reset button for input form
-  const reset = document.querySelector("#btnReset");
-  reset.addEventListener("click", function () {
-    document.querySelector("#form").reset();
-    document.getElementById("name-task-error").innerHTML = "";
-    document.getElementById("description-task-error").innerHTML = "";
-    document.getElementById("assigned-to-task-error").innerHTML = "";
+  }
+  if (dueDate.value < new Date().toISOString().split("T")[0]) {
+    document.getElementById("due-date-task-input").style.borderColor = "red";
+    document.getElementById("due-date-task-error").innerHTML =
+      "Due date must be today or later";
+    document.getElementById("due-date-task-input").placeholder = "";
+  } else {
+    document.getElementById("due-date-task-input").style.borderColor = "green";
     document.getElementById("due-date-task-error").innerHTML = "";
+  }
+
+  if (status.value === "0") {
+    document.getElementById("status-task-input").style.borderColor = "red";
+    document.getElementById("status-task-error").innerHTML =
+      "Status must be selected";
+    document.getElementById("status-task-input").placeholder = "";
+  } else {
     document.getElementById("status-task-error").innerHTML = "";
-    document.getElementById("name-task-input").style.borderColor = "lightgrey";
-    document.getElementById("description-task-input").style.borderColor =
-      "lightgrey";
-    document.getElementById("assigned-to-task-input").style.borderColor =
-      "lightgrey";
-    document.getElementById("due-date-task-input").style.borderColor = "lightgrey";
-    document.getElementById("status-task-input").style.borderColor = "lightgrey";
-  });
+    document.getElementById("status-task-input").style.borderColor = "green";
+    document.getElementById("status-task-input").placeholder = "";
+  }
+}
+
+// reset button for input form
+const reset = document.querySelector("#btnReset");
+reset.addEventListener("click", function () {
+  document.querySelector("#form").reset();
+  document.getElementById("name-task-error").innerHTML = "";
+  document.getElementById("description-task-error").innerHTML = "";
+  document.getElementById("assigned-to-task-error").innerHTML = "";
+  document.getElementById("due-date-task-error").innerHTML = "";
+  document.getElementById("status-task-error").innerHTML = "";
+  document.getElementById("name-task-input").style.borderColor = "lightgrey";
+  document.getElementById("description-task-input").style.borderColor =
+    "lightgrey";
+  document.getElementById("assigned-to-task-input").style.borderColor =
+    "lightgrey";
+  document.getElementById("due-date-task-input").style.borderColor =
+    "lightgrey";
+  document.getElementById("status-task-input").style.borderColor = "lightgrey";
+
+});
 
 // on button submit
 const submit = document.querySelector("#btnSubmit");
@@ -102,3 +101,21 @@ submit.addEventListener("click", function () {
   validateTaskForm();
 });
 
+// reset fields on close button
+const close = document.querySelector("#btnClose");
+close.addEventListener("click", function () {
+  document.querySelector("#form").reset();
+  document.getElementById("name-task-error").innerHTML = "";
+  document.getElementById("description-task-error").innerHTML = "";
+  document.getElementById("assigned-to-task-error").innerHTML = "";
+  document.getElementById("due-date-task-error").innerHTML = "";
+  document.getElementById("status-task-error").innerHTML = "";
+  document.getElementById("name-task-input").style.borderColor = "lightgrey";
+  document.getElementById("description-task-input").style.borderColor =
+    "lightgrey";
+  document.getElementById("assigned-to-task-input").style.borderColor =
+    "lightgrey";
+  document.getElementById("due-date-task-input").style.borderColor =
+    "lightgrey";
+  document.getElementById("status-task-input").style.borderColor = "lightgrey";
+});

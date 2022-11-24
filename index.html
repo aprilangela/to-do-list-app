@@ -215,7 +215,7 @@
             <form id="form">
               <div class="mb-3">
                 <label for="name-task-input" class="col-form-label">Name of task:</label>
-                <input type="text" placeholder="Enter name with at least 8 characters" class="form-control" id="name-task-input" />
+                <input type="text" placeholder="Task name must be at least 8 characters long" class="form-control" id="name-task-input" />
                 <span id="name-task-error"" class="text-danger"></span>
               </div>
               
@@ -224,14 +224,14 @@
                   >Description:</label
                 >
                 <textarea
-                placeholder="Enter description with at least 15 characters"
+                placeholder="Task description must be at least 15 characters long"
                   class="form-control"
                   id="description-task-input"
                 ></textarea> 
                 <span id="description-task-error" class="text-danger"></span>
                 <div class="mb-3">
                   <label for="assigned-to-task-input" class="col-form-label">Assigned To:</label>
-                  <input placeholder="Enter name with at least 8 characters" type="text" class="form-control" id="assigned-to-task-input" />
+                  <input placeholder="Assignee must be at least 8 characters long" type="text" class="form-control" id="assigned-to-task-input" />
                   <span id="assigned-to-task-error" class="text-danger"></span>
                 </div>
               </div>
@@ -260,7 +260,7 @@
           
           <div class="modal-footer">
             <button
-              id="close"
+              id="btnClose"
               type="button"
               class="btn btn-primary"
               data-bs-dismiss="modal"
