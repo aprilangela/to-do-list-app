@@ -27,7 +27,9 @@ function validateTaskForm() {
       "Task name must be at least 8 characters long";
     document.getElementById("name-task-input").style.borderColor = "red";
     document.getElementById("name-task-input").placeholder = "";
+  
   } else {
+
     document.getElementById("name-task-input").style.borderColor = "green";
     document.getElementById("name-task-error").innerHTML = "";
   }
@@ -73,41 +75,40 @@ function validateTaskForm() {
     document.getElementById("status-task-input").style.borderColor = "green";
     document.getElementById("status-task-input").placeholder = "";
   }
+  return true;
 }
 
 // reset button for input form
 const reset = document.querySelector("#btnReset");
 reset.addEventListener("click", function () {
-  document.querySelector("#form").reset();
-  document.getElementById("name-task-error").innerHTML = "";
-  document.getElementById("description-task-error").innerHTML = "";
-  document.getElementById("assigned-to-task-error").innerHTML = "";
-  document.getElementById("due-date-task-error").innerHTML = "";
-  document.getElementById("status-task-error").innerHTML = "";
-  document.getElementById("name-task-input").style.borderColor = "lightgrey";
-  document.getElementById("description-task-input").style.borderColor =
-    "lightgrey";
-  document.getElementById("assigned-to-task-input").style.borderColor =
-    "lightgrey";
-  document.getElementById("due-date-task-input").style.borderColor =
-    "lightgrey";
-  document.getElementById("status-task-input").style.borderColor = "lightgrey";
-
+  Clearforms();
 });
 
 // on button submit
 const submit = document.querySelector("#btnSubmit");
 submit.addEventListener("click", function () {
   validateTaskForm();
+  if (validateTaskForm === true) {
+    document.querySelector("#form").reset();
+  
+  }
 });
 
-// reset fields on close button
+// on button close 
 const close = document.querySelector("#btnClose");
 close.addEventListener("click", function () {
+  Clearforms();
+});
+
+
+function Clearforms () {
   document.querySelector("#form").reset();
   document.getElementById("name-task-error").innerHTML = "";
+  document.getElementById("name-task-input").placeholder = "Task name must be at least 8 characters long";
   document.getElementById("description-task-error").innerHTML = "";
+  document.getElementById("description-task-input").placeholder = "Task description must be at least 15 characters long";
   document.getElementById("assigned-to-task-error").innerHTML = "";
+  document.getElementById("assigned-to-task-input").placeholder = "Assignee must be at least 8 characters long";
   document.getElementById("due-date-task-error").innerHTML = "";
   document.getElementById("status-task-error").innerHTML = "";
   document.getElementById("name-task-input").style.borderColor = "lightgrey";
@@ -118,4 +119,8 @@ close.addEventListener("click", function () {
   document.getElementById("due-date-task-input").style.borderColor =
     "lightgrey";
   document.getElementById("status-task-input").style.borderColor = "lightgrey";
-});
+
+}
+
+
+//  validateTaskForm function queries the DOM for the task form and validates the input
