@@ -1,291 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>App to do list</title>
 
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      crossorigin="anonymous"
-    />
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
 
-    <link href="style.css" rel="stylesheet" />
-  </head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TODO App</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
-  <body>
-    <div class="banner">
-      <h5>Make Your Day Productive</h5>
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+  <div class="app">
+    <h4 class="mb-3">To Do App</h4>
+    <h5 class="mb-3">The Current date and time is: <span id="date"></span>&nbsp;&nbsp<span id="time"></span> </h5>
+    <div id="addNew" data-bs-toggle="modal" data-bs-target="#form">
+      <span>Add New Task</span>
+      <i class="fas fa-plus"></i>
     </div>
 
-    <div><span id="date"> </span> <span id="time"> </span></div>
-    <!-- Angela -->
-
-    <div class="top-right">
-      <p class="task-title">Current Tasks</p>
-      <!-- task layout -->
-      <div
-        id="carouselExampleControls"
-        class="carousel slide"
-        data-ride="carousel"
-      >
-        <div class="carousel-inner disp">
-          <!-- 1st card -->
-          <div class="carousel-item active">
-            <div class="card mb-3 mx-auto" style="max-width: 540px">
-              <div class="row no-gutters">
-                <div class="col-md-4">
-                  <img
-                    src="Images/todo.png"
-                    class="card-img"
-                    alt="todo-image"
-                  />
-                </div>
-                <div class="col-md-8">
-                  <div class="card-body">
-                    <h5 class="card-title">Title:wireframe</h5>
-                    <p class="card-text">
-                      This task is assigned to team mansger: finish the
-                      wireframe for to-do-list app
-                    </p>
-                    <p class="card-text">
-                      <small class="text-muted">Last updated 3 mins ago</small>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- 2nd card -->
-          <div class="carousel-item">
-            <div class="card mb-3 mx-auto" style="max-width: 540px">
-              <div class="row no-gutters">
-                <div class="col-md-4">
-                  <img
-                    src="Images/todo.png"
-                    class="card-img"
-                    alt="todo-image"
-                  />
-                </div>
-                <div class="col-md-8">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">
-                      This is a wider card with supporting text below as a
-                      natural lead-in to additional content. This content is a
-                      little bit longer.
-                    </p>
-                    <p class="card-text">
-                      <small class="text-muted">Last updated 3 mins ago</small>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- 3rd card -->
-          <div class="carousel-item">
-            <div class="card mb-3 mx-auto" style="max-width: 540px">
-              <div class="row no-gutters">
-                <div class="col-md-4">
-                  <img
-                    src="Images/todo.png"
-                    class="card-img"
-                    alt="todo-image"
-                  />
-                </div>
-                <div class="col-md-8">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">
-                      This is a wider card with supporting text below as a
-                      natural lead-in to additional content. This content is a
-                      little bit longer.
-                    </p>
-                    <p class="card-text">
-                      <small class="text-muted">Last updated 3 mins ago</small>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- 4th card -->
-          <div class="carousel-item">
-            <div class="card mb-3 mx-auto" style="max-width: 540px">
-              <div class="row no-gutters">
-                <div class="col-md-4">
-                  <img
-                    src="Images/todo.png"
-                    class="card-img"
-                    alt="todo-image"
-                  />
-                </div>
-                <div class="col-md-8">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">
-                      This is a wider card with supporting text below as a
-                      natural lead-in to additional content. This content is a
-                      little bit longer.
-                    </p>
-                    <p class="card-text">
-                      <small class="text-muted">Last updated 3 mins ago</small>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <!-- 5th card -->
-            <div class="card mb-3 mx-auto" style="max-width: 540px">
-              <div class="row no-gutters">
-                <div class="col-md-4">
-                  <img
-                    src="Images/todo.png"
-                    class="card-img"
-                    alt="todo-image"
-                  />
-                </div>
-                <div class="col-md-8">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">
-                      This is a wider card with supporting text below as a
-                      natural lead-in to additional content. This content is a
-                      little bit longer.
-                    </p>
-                    <p class="card-text">
-                      <small class="text-muted">Last updated 3 mins ago</small>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <a
-          class="carousel-control-prev"
-          href="#carouselExampleControls"
-          role="button"
-          data-slide="prev"
-        >
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a
-          class="carousel-control-next"
-          href="#carouselExampleControls"
-          role="button"
-          data-slide="next"
-        >
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
-      </div>
-    </div>
-    <!-- Sofia -->
-    <button
-      type="button"
-      class="btn btn-primary"
-      data-bs-toggle="modal"
-      data-bs-target="#exampleModal"
-      data-bs-whatever="@mdo"
-    >
-      Create a new task
-    </button>
-
-    <div
-      class="modal fade"
-      id="exampleModal"
-      tabindex="-1"
-      aria-labelledby="exampleModalLabel"
-      aria-hidden="true"
-    >
+    <!-- Modal -->
+    
+    <form class="modal fade" id="form" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h1 class="modal-title" id="exampleModalLabel">New Task</h1>
+            <h5 class="modal-title" id="exampleModalLabel">Add New Task</h5>
+            <button type="button" id="#btnClose" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <form id="form">
-              <div class="mb-3">
-                <label for="name-task-input" class="col-form-label">Name of task:</label>
-                <input type="text" placeholder="Task name must be at least 8 characters long" class="form-control" id="name-task-input" />
-                <span id="name-task-error"" class="text-danger"></span>
-              </div>
-              
-              <div class="mb-3">
-                <label for="description-task-input"" class="col-form-label"
-                  >Description:</label
-                >
-                <textarea
-                placeholder="Task description must be at least 15 characters long"
-                  class="form-control"
-                  id="description-task-input"
-                ></textarea> 
-                <span id="description-task-error" class="text-danger"></span>
+            <div class="modal-body">
+            
                 <div class="mb-3">
-                  <label for="assigned-to-task-input" class="col-form-label">Assigned To:</label>
-                  <input placeholder="Assignee must be at least 8 characters long" type="text" class="form-control" id="assigned-to-task-input" />
-                  <span id="assigned-to-task-error" class="text-danger"></span>
+                  <label for="name-task-input" class="col-form-label">Name of task:</label>
+                  <input type="text" placeholder="Task name must be at least 8 characters long" class="form-control"
+                    id="name-task-input" />
+                  <span id="name-task-error" class=" text-danger"></span>
                 </div>
-              </div>
-              <div class="mb-3">
-                <label for="due-date-task-input" class="col-form-label"
-                  >Due Date:</label 
-                >
-                <input type="date" class="form-control" id="due-date-task-input" />
-                <span id="due-date-task-error" class="text-danger"></span>
-              </div>
-              <div class="mb-3">
-                <label for="status-input" class="col-form-label">Status:</label>
-                <select id="status-input" class="form-control">
-                  <option value="0" id="disabled-select" disabled selected >Please choose one</option>
-                  <option value="ToDO">To Do</option>
-                  <option value="InProgress">In Progress</option>
-                  <option value="Review">Review</option>
-                  <option value="Done">Done</option>
-                </select>
-                <span id="status-task-error" class="text-danger"></span>
-              </div>
-            </form>
 
-          </div>
+                <div class="mb-3">
+                  <label for="description-task-input"" class=" col-form-label">Description:</label>
+                  <textarea placeholder="Task description must be at least 15 characters long" class="form-control"
+                    id="description-task-input"></textarea>
+                  <span id="description-task-error" class="text-danger"></span>
+                  <div class="mb-3">
+                    <label for="assigned-to-task-input" class="col-form-label">Assigned To:</label>
+                    <input placeholder="Assignee must be at least 8 characters long" type="text" class="form-control"
+                      id="assigned-to-task-input" />
+                    <span id="assigned-to-task-error" class="text-danger"></span>
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label for="due-date-task-input" class="col-form-label">Due Date:</label>
+                  <input type="date" class="form-control" id="due-date-task-input" />
+                  <span id="due-date-task-error" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                  <label for="status-task-input" class="col-form-label">Status:</label>
+                  <select id="status-task-input" class="form-control">
+                    <option value="0" id="disabled-select" disabled selected></option>
+                    <option value="To Do">To Do</option>
+                    <option value="In Progress">In Progress</option>
+                    <option value="Review">Review</option>
+                    <option value="Done">Done</option>
+                  </select>
+                  <span id="status-task-error" class="text-danger"></span>
+                </div>
           
-          
-          <div class="modal-footer">
-            <button
-              id="btnClose"
-              type="button"
-              class="btn btn-primary"
-              data-bs-dismiss="modal"
-            >
-              Close
-            </button>
-            <button type="button" id="btnReset" class="btn btn-primary">
-              Reset
-            </button>
-            <button type="button"  id="btnSubmit" class="btn btn-primary">
-              Create task
-            </button>
+    
+
+            </div>
+
+
+            <div class="modal-footer">
+
+              <button type="button" id="btnReset" class="btn btn-primary">
+                Reset
+              </button>
+              <button type="submit" id="add" class="btn btn-primary">Add</button>
           </div>
         </div>
       </div>
-    </div>
+      </div>  
+    </form>
 
-    <!-- Footer -->
-    
-    <!-- Bootstrap's JavaScript Files -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-      crossorigin="anonymous"
-    ></script>
-    <script src="script.js"></script>
-  </body>
+    <h5 class="text-center my-3">Tasks</h5>
+
+    <div id="tasks">
+
+    </div>
+  </div>
+</body>
+<script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
 </html>
