@@ -106,9 +106,9 @@ let deleteTask = (e) => {
 let editTask = (e) => {
   let selectedTask = e.parentElement.parentElement;
 
-  taskNameInput.value  = selectedTask.children[0].innerHTML;
+  taskNameInput.value = selectedTask.children[0].innerHTML;
   descriptionInput.value = selectedTask.children[2].innerHTML;
-  dueDateInput.value = selectedTask.children[1].innerHTML; 
+  dueDateInput.value = selectedTask.children[1].innerHTML;
   assignedToInput.value = selectedTask.children[3].innerHTML;
   statusInput.value = selectedTask.children[4].innerHTML;
 
@@ -167,5 +167,3 @@ const close = document.querySelector("#btnClose");
 close.addEventListener("click", function () {
   Clearforms();
 });
-
-// change background color
