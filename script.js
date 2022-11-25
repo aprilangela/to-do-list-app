@@ -1,5 +1,3 @@
-
-
 let form = document.getElementById("form");
 let taskNameInput = document.getElementById("name-task-input");
 let descriptionInput = document.getElementById("description-task-input");
@@ -16,27 +14,24 @@ form.addEventListener("submit", (e) => {
 });
 
 let formValidation = () => {
-
   if (taskNameInput.value.length < 8) {
     document.getElementById("name-task-error").innerHTML =
       "Please enter a task name thats at least 8 characters long";
-      document.getElementById("name-task-input").style.borderColor = "red";
-      document.getElementById("name-task-input").placeholder = "";
+    document.getElementById("name-task-input").style.borderColor = "red";
+    document.getElementById("name-task-input").placeholder = "";
+  }
 
-  } 
- 
-
-   if (descriptionInput.value.length < 15) {
+  if (descriptionInput.value.length < 15) {
     document.getElementById("description-task-error").innerHTML =
       "Please enter a description thats at least 15 characters long";
-      document.getElementById("description-task-input").style.borderColor = "red";
-      document.getElementById("description-task-input").placeholder = "";
+    document.getElementById("description-task-input").style.borderColor = "red";
+    document.getElementById("description-task-input").placeholder = "";
   }
-    if (assignedToInput.value.length < 8) {
+  if (assignedToInput.value.length < 8) {
     document.getElementById("assigned-to-task-error").innerHTML =
       "Please enter a name thats at least 8 characters long";
-      document.getElementById("assigned-to-task-input").style.borderColor = "red";
-      document.getElementById("assigned-to-task-input").placeholder = "";
+    document.getElementById("assigned-to-task-input").style.borderColor = "red";
+    document.getElementById("assigned-to-task-input").placeholder = "";
   }
   if (dueDateInput.value < new Date().toISOString().split("T")[0]) {
     document.getElementById("due-date-task-input").style.borderColor = "red";
@@ -45,13 +40,11 @@ let formValidation = () => {
     document.getElementById("due-date-task-input").placeholder = "";
   }
 
-  if (statusInput.value == 0) {
+  if (statusInput.value === "0") {
     document.getElementById("status-task-input").style.borderColor = "red";
-    document.getElementById("status-task-error").innerHTML = "Please select a status";
-
-  }
-  
-  else {
+    document.getElementById("status-task-error").innerHTML =
+      "Please select a status";
+  } else {
     acceptData();
     add.setAttribute("data-bs-dismiss", "modal");
     add.click();
@@ -109,12 +102,13 @@ let deleteTask = (e) => {
   localStorage.setItem("data", JSON.stringify(data));
 };
 
+// eslint-disable-next-line no-unused-vars
 let editTask = (e) => {
   let selectedTask = e.parentElement.parentElement;
 
-  taskNameInput.value = selectedTask.children[0].innerHTML;
-  dueDateInput.value = selectedTask.children[1].innerHTML;
+  taskNameInput.value  = selectedTask.children[0].innerHTML;
   descriptionInput.value = selectedTask.children[2].innerHTML;
+  dueDateInput.value = selectedTask.children[1].innerHTML; 
   assignedToInput.value = selectedTask.children[3].innerHTML;
   statusInput.value = selectedTask.children[4].innerHTML;
 
@@ -130,7 +124,6 @@ let resetForm = () => {
   createTasks();
 })();
 
-
 function updateClock() {
   let now = new Date();
   let date = now.toDateString();
@@ -142,15 +135,17 @@ function updateClock() {
 
 updateClock();
 
-
-function Clearforms () {
+function Clearforms() {
   document.querySelector("#form").reset();
   document.getElementById("name-task-error").innerHTML = "";
-  document.getElementById("name-task-input").placeholder = "Task name must be at least 8 characters long";
+  document.getElementById("name-task-input").placeholder =
+    "Task name must be at least 8 characters long";
   document.getElementById("description-task-error").innerHTML = "";
-  document.getElementById("description-task-input").placeholder = "Task description must be at least 15 characters long";
+  document.getElementById("description-task-input").placeholder =
+    "Task description must be at least 15 characters long";
   document.getElementById("assigned-to-task-error").innerHTML = "";
-  document.getElementById("assigned-to-task-input").placeholder = "Assignee must be at least 8 characters long";
+  document.getElementById("assigned-to-task-input").placeholder =
+    "Assignee must be at least 8 characters long";
   document.getElementById("due-date-task-error").innerHTML = "";
   document.getElementById("status-task-error").innerHTML = "";
   document.getElementById("name-task-input").style.borderColor = "lightgrey";
@@ -161,7 +156,6 @@ function Clearforms () {
   document.getElementById("due-date-task-input").style.borderColor =
     "lightgrey";
   document.getElementById("status-task-input").style.borderColor = "lightgrey";
-
 }
 
 const reset = document.querySelector("#btnReset");
@@ -173,3 +167,5 @@ const close = document.querySelector("#btnClose");
 close.addEventListener("click", function () {
   Clearforms();
 });
+
+// change background color
