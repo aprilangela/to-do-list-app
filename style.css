@@ -7,8 +7,12 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-
   
+  background-image: linear-gradient(to right bottom,
+  rgba(232, 232, 232, 0.3),
+  rgba(191, 191, 191, 0.3)),
+url("/Images/todo.png");
+ ;
 }
 
 
