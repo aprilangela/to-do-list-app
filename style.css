@@ -9,6 +9,7 @@ body {
   height: 100vh;
 }
 
+
 .app {
   background-color: #fff;
   width: 600px;
@@ -33,6 +34,9 @@ body {
   padding: 5px 10px;
   border-radius: 5px;
   cursor: pointer;
+
+
+
 }
 
 .fa-plus {
@@ -42,10 +46,16 @@ body {
   border-radius: 3px;
 }
 
+
 #tasks {
   display: grid;
   grid-template-columns: 1fr;
   gap: 14px;
+
+h1{
+    color: rgba(247, 248, 250, 0.901);
+    text-align: center;
+
 }
 
 #tasks div {
@@ -56,10 +66,13 @@ body {
 }
 
 
+
 #tasks div .options {
   justify-self: center;
   display: flex;
   gap: 20px;
+
+
 }
 
 #tasks div .options i {
