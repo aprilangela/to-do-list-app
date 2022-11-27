@@ -1,104 +1,81 @@
-.grid-container {
-
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(6, 1fr);
-    
-    background-color: white;
-    padding: 2rem 2rem;
-    margin: 5rem 10rem;
-    justify-content: center;
-    max-width: 700px;
+body {
+  font-family: 'noto'  sans-serif;
+  margin: 0 50px;
+  background-color: lightblue ;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 
-.banner {
-    background-image: url('Images/office.jpg');
-    background-size: cover;
-    /*max-width: 640px;*/
-    /*max-height: 300px;*/
-    
-}
-
-.banner h5{
-
-    /*background-color: #bec1e2;*/
-    /*grid-row: 1 / 2;*/
-    /*grid-column: ;*/
-    
-    font-family: Helvetica;
-    font-size: 5rem;
-    font-weight: bold;
-    color: rgb(235, 237, 242);
-    text-align: center;
-    padding-top: 5rem;
-    
-}
-
-.card-img {
-    max-width: 12rem;
-}
-
-
-.top-right {
-    background-color: #cbd3f0;
-    grid-row: 1 / 2;
-    grid-column: 3 / 6;
-    min-width: 305px;
-    
-   
-}
-.task-title{
-    color:#84aee6;
-    background-color:#ced8f8;
-    text-align: center;
-    height: 2rem;
-    font-weight: bold;
-    font-size: larger;
-    
+.app {
+  background-color: #fff;
+  width: 600px;
+  height: 800px;
+  border: 1px solid  ;
+  border-radius: 8px;
+  padding: 15px;
+  overflow-y: scroll;
+  scrollbar-width: none;
   
 }
 
-    /* task layout */
-
-
- 
-    
-    
-   /* end of task layout */
-
-
-
-.bottom-right {
-    background-color: #bbcdf8;
-    grid-row: 2 / 4;
-    grid-column: 3 / 6;
-    min-width: 305px;
-    padding: 1rem ;  
+.app::-webkit-scrollbar {
+  width: 0 !important;
 }
+
+#addNew {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: lightgrey;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+
+
+
+}
+
+.fa-plus {
+
+  background-color: lightgrey;
+  padding: 3px;
+  border-radius: 3px;
+}
+
+
+#tasks {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
 
 h1{
     color: rgba(247, 248, 250, 0.901);
     text-align: center;
+
+}
+
+#tasks div {
+  border-radius: 6px;
+  padding: 5px;
+  display: grid;
+  gap: 4px;
 }
 
 
 
-.btn-primary {
-    color: #fff;
-    background-color: rgb(223, 223, 245);
-    border-color: rgb(217, 218, 245);
-  }
+#tasks div .options {
+  justify-self: center;
+  display: flex;
+  gap: 20px;
 
-  .btn-primary:hover {
-    background-color: rgba(191, 187, 234, 0.963);
-    border-color: rgba(135, 132, 169, 0.963);
-  }
 
-label {
-    background-color: #ced9f8;
 }
 
+#tasks div .options i {
+  cursor: pointer;
+}
 
-
-  
