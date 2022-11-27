@@ -7,6 +7,23 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  
+}
+
+h4{
+  color:black;
+}
+
+#today {
+  height: 30%;
+  background-image: url(/Images/office.jpg) ;
+  background-size: cover;
+  padding-top: 20%;
+  text-align: center;
+  opacity: 70%;
+  color:rgb(60, 10, 10);
+  font-weight: 900;
+
 }
 
 
