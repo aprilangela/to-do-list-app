@@ -4,9 +4,9 @@ let descriptionInput = document.getElementById("description-task-input");
 let assignedToInput = document.getElementById("assigned-to-task-input");
 let dueDateInput = document.getElementById("due-date-task-input");
 let statusInput = document.getElementById("status-task-input");
-
 let tasks = document.getElementById("tasks");
 let add = document.getElementById("add");
+
 
 //  looks for event button press submit and runs the form validation function
 form.addEventListener("submit", (e) => {
@@ -110,6 +110,7 @@ let formValidation = () => {
   }
 };
 
+
 let data = [{}];
 // this makes object and pushes it to array and local storage
 let acceptData = () => {
@@ -179,17 +180,10 @@ let resetForm = () => {
   data = JSON.parse(localStorage.getItem("data")) || [];
   createTasks();
 })();
-// clock function displays the current time
-function updateClock() {
-  let now = new Date();
-  let date = now.toDateString();
-  let time = now.toLocaleTimeString();
-  document.getElementById("date").innerHTML = date;
-  document.getElementById("time").innerHTML = time;
-  setInterval(updateClock, 1000);
-}
-// runs the clock function
-updateClock();
+
+
+
+
 
 // clears all the inputs
 function clearForms() {
