@@ -57,7 +57,7 @@ let formValidation = () => {
 
 let data = [{}];
 
-let acceptData = () => {
+function acceptData() {
   data.push({
     text: taskNameInput.value,
     description: descriptionInput.value,
@@ -69,7 +69,7 @@ let acceptData = () => {
   localStorage.setItem("data", JSON.stringify(data));
 
   createTasks();
-};
+}
 
 let createTasks = () => {
   tasks.innerHTML = "";

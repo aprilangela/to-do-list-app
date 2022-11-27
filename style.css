@@ -7,13 +7,12 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  
+
   
 }
 
-h4{
-  color:black;
-}
+
+
 
 #today {
   height: 30%;
@@ -69,10 +68,12 @@ h4{
   display: grid;
   grid-template-columns: 1fr;
   gap: 14px;
+  
+}
 
-h1{
+h1 {
     color: rgba(247, 248, 250, 0.901);
-    text-align: center;
+    text-align : center;
 
 }
 
