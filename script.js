@@ -1,3 +1,6 @@
+import * as Taskmaster from "/modules/taskMaster.js";
+
+let data = [{}];
 let form = document.getElementById("form");
 let taskNameInput = document.getElementById("name-task-input");
 let descriptionInput = document.getElementById("description-task-input");
@@ -108,21 +111,6 @@ let formValidation = () => {
   }
 };
 
-let data = [{}];
-// this makes object and pushes it to array and local storage
-let acceptData = () => {
-  data.push({
-    text: taskNameInput.value,
-    description: descriptionInput.value,
-    assignee: assignedToInput.value,
-    date: dueDateInput.value,
-    status: statusInput.value,
-  });
-
-  localStorage.setItem("data", JSON.stringify(data));
-
-  createTasks();
-};
 // this makes html card for each task
 
 let createTasks = () => {
@@ -157,9 +145,7 @@ let deleteTask = (e) => {
   data.splice(e.parentElement.parentElement.id, 1);
   localStorage.setItem("data", JSON.stringify(data));
   console.log(data);
-  
 };
-
 
 // eslint-disable-next-line no-unused-vars
 // edit is a concept that I am still working on
@@ -234,14 +220,3 @@ const close = document.querySelector("#btnClose");
 close.addEventListener("click", function () {
   clearForms();
 });
-
-
-// on background press change colour of background
-
-const body = document.querySelector("background");
-const changeBackground = document.querySelector("#changeBackground");
-changeBackground.addEventListener("click", function () {
-  body.classList.toggle("dark");
-}
-);
-

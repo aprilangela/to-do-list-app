@@ -1,7 +1,7 @@
 body {
-  font-family: 'noto'  sans-serif;
+  font-family: "noto" sans-serif;
   margin: 0 50px;
-  background-color: lightblue ;
+  background-color: lightblue;
   overflow: hidden;
   display: flex;
   justify-content: center;
@@ -9,17 +9,15 @@ body {
   height: 100vh;
 }
 
-
 .app {
   background-color: #fff;
   width: 600px;
   height: 800px;
-  border: 1px solid  ;
+  border: 1px solid;
   border-radius: 8px;
   padding: 15px;
   overflow-y: scroll;
   scrollbar-width: none;
-  
 }
 
 .app::-webkit-scrollbar {
@@ -37,22 +35,15 @@ body {
 }
 
 .fa-plus {
-
   background-color: lightgrey;
   padding: 3px;
   border-radius: 3px;
 }
 
-
 #tasks {
   display: grid;
   grid-template-columns: 1fr;
   gap: 14px;
-
-h1: {
-    color: rgba(247, 248, 250, 0.901);
-    text-align: center;
-
 }
 
 #tasks div {
@@ -62,18 +53,12 @@ h1: {
   gap: 4px;
 }
 
-
-
 #tasks div .options {
   justify-self: center;
   display: flex;
   gap: 20px;
-
-
 }
 
 #tasks div .options i {
   cursor: pointer;
 }
-
-
