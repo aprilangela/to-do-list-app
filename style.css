@@ -7,28 +7,6 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  
-  background-image: linear-gradient(to right bottom,
-  rgba(232, 232, 232, 0.3),
-  rgba(191, 191, 191, 0.3)),
-  /*url("/Images/computer-4484282_1280.jpg");*/
- 
-}
-
-
-
-
-#today {
-  height: 30%;
-  /*background-image: url("/Images/bannertodo.jpg");*/
-  background-size: cover;
-  padding-top: 20%;
-  text-align: center;
-  opacity: 70%;
-  color:rgb(52, 93, 119);
-  font-weight: 900;
-  background-color: rgb(192, 199, 242);
-
 }
 
 
@@ -73,12 +51,10 @@ body {
   display: grid;
   grid-template-columns: 1fr;
   gap: 14px;
-  
-}
 
-h1 {
+h1{
     color: rgba(247, 248, 250, 0.901);
-    text-align : center;
+    text-align: center;
 
 }
 

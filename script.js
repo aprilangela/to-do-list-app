@@ -111,9 +111,11 @@ let formValidation = () => {
 };
 
 
+
 let data = [{}];
 // this makes object and pushes it to array and local storage
 let acceptData = () => {
+
   data.push({
     text: taskNameInput.value,
     description: descriptionInput.value,
@@ -125,8 +127,10 @@ let acceptData = () => {
   localStorage.setItem("data", JSON.stringify(data));
 
   createTasks();
+
 };
 // this makes html card for each task
+
 let createTasks = () => {
   tasks.innerHTML = "";
   data.map((x, y) => {
