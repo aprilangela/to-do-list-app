@@ -7,6 +7,27 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  
+  background-image: linear-gradient(to right bottom,
+  rgba(232, 232, 232, 0.3),
+  rgba(191, 191, 191, 0.3)),
+url("/Images/todo.png");
+ ;
+}
+
+
+
+
+#today {
+  height: 30%;
+  background-image: url(/Images/office.jpg) ;
+  background-size: cover;
+  padding-top: 20%;
+  text-align: center;
+  opacity: 70%;
+  color:rgb(60, 10, 10);
+  font-weight: 900;
+
 }
 
 
@@ -51,10 +72,12 @@ body {
   display: grid;
   grid-template-columns: 1fr;
   gap: 14px;
+  
+}
 
-h1{
+h1 {
     color: rgba(247, 248, 250, 0.901);
-    text-align: center;
+    text-align : center;
 
 }
 
