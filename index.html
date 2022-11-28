@@ -36,7 +36,7 @@
         id="time"
       ></span>
     </h5>
-    <div id="addNew" data-bs-toggle="modal" data-bs-target="#form">
+    <div onclick="addNewTask()" id="addNew"  data-bs-toggle="modal" data-bs-target="#form">
       <span>Add New Task</span>
       <i class="fas fa-plus"></i>
     </div>
@@ -57,7 +57,7 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Add New Task</h5>
+            <h5 class="modal-title" id="Modal-label1">Add New Task</h5>
             <button
               type="button"
               id="#btnClose"
@@ -155,6 +155,7 @@
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
     crossorigin="anonymous"
   ></script>
-  <script src="script.js" type="module"></script>
+  <script src="script.js" defer ></script>
+  
   <script src="modules\updateClock.js" type="module"></script>
 </html>

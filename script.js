@@ -1,5 +1,3 @@
-import * as Taskmaster from "/modules/taskMaster.js";
-
 let data = [{}];
 let form = document.getElementById("form");
 let taskNameInput = document.getElementById("name-task-input");
@@ -10,7 +8,6 @@ let statusInput = document.getElementById("status-task-input");
 let tasks = document.getElementById("tasks");
 let add = document.getElementById("add");
 
-//  looks for event button press submit and runs the form validation function
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   formValidation();
@@ -111,13 +108,29 @@ let formValidation = () => {
   }
 };
 
+// this makes object and pushes it to array and local storage
+let acceptData = () => {
+  data.push({
+    text: taskNameInput.value,
+    description: descriptionInput.value,
+    assignee: assignedToInput.value,
+    date: dueDateInput.value,
+    status: statusInput.value,
+  });
+  // write to a json file
+
+  localStorage.setItem("data", JSON.stringify(data));
+
+  createTasks();
+};
+
 // this makes html card for each task
 
 let createTasks = () => {
   tasks.innerHTML = "";
   data.map((x, y) => {
     return (tasks.innerHTML += `
-    <div class=card ${x.color} id=${y}>
+    <div class=card id=${y}>
     <h5 class="card-header">Task name: ${x.text}</h5>
     <div class="card-body">
     <p class="card-text">Description: ${x.description} </p>
@@ -129,6 +142,8 @@ let createTasks = () => {
       <span class="options">
       <i onClick= "editTask(this)" data-bs-toggle="modal" data-bs-target="#form" class="fas fa-edit"></i>
       <i onClick ="deleteTask(this);createTasks()" class="fas fa-trash-alt"></i>
+      
+      <i onClick ="markDone(this)" class="fas fa-check"></i>
     </div>
   </div>
         </div>
@@ -137,8 +152,6 @@ let createTasks = () => {
 
   resetForm();
 };
-// delete function on trash icon
-// i want to make a confirm modal come up still working on
 
 let deleteTask = (e) => {
   e.parentElement.parentElement.remove();
@@ -146,18 +159,29 @@ let deleteTask = (e) => {
   localStorage.setItem("data", JSON.stringify(data));
   console.log(data);
 };
-
-// eslint-disable-next-line no-unused-vars
-// edit is a concept that I am still working on
+// edit task function
 let editTask = (e) => {
-  let selectedTask = e.parentElement.parentElement;
-  taskNameInput.value = selectedTask.children[0].innerHTML;
-  descriptionInput.value = selectedTask.children[2].innerHTML;
-  assignedToInput.value = selectedTask.children[3].innerHTML;
-  dueDateInput.value = selectedTask.children[1].innerHTML;
-  statusInput.value = selectedTask.children[4].innerHTML;
-  deleteTask(e);
+  // modal title change to edit
+  let id = e.parentElement.parentElement.parentElement.id;
+  taskNameInput.value = data[id].text;
+  descriptionInput.value = data[id].description;
+  assignedToInput.value = data[id].assignee;
+  dueDateInput.value = data[id].date;
+  statusInput.value = data[id].status;
+  // change modal title to edit task
+  document.getElementById("Modal-label1").innerHTML = "Edit Task";
+
+}
+
+
+let markDone = (e) => {
+  let id = e.parentElement.parentElement.parentElement.id;
+  data[id].status = "Done";
+  localStorage.setItem("data", JSON.stringify(data));
+  createTasks();
+  
 };
+// run clearforms function when modal is closed
 
 // reset form  function
 let resetForm = () => {
@@ -220,3 +244,8 @@ const close = document.querySelector("#btnClose");
 close.addEventListener("click", function () {
   clearForms();
 });
+
+function addNewTask() {
+  document.getElementById("Modal-label1").innerHTML = "Add New Task";
+  clearForms();
+}
