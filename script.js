@@ -7,7 +7,6 @@ let statusInput = document.getElementById("status-task-input");
 let tasks = document.getElementById("tasks");
 let add = document.getElementById("add");
 
-
 //  looks for event button press submit and runs the form validation function
 form.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -91,7 +90,6 @@ let formValidation = () => {
     document.getElementById("status-task-error").innerHTML = "";
   }
 
-
   if (
     taskNameInput.value.length > 7 &&
     descriptionInput.value.length > 14 &&
@@ -110,12 +108,9 @@ let formValidation = () => {
   }
 };
 
-
-
 let data = [{}];
 // this makes object and pushes it to array and local storage
 let acceptData = () => {
-
   data.push({
     text: taskNameInput.value,
     description: descriptionInput.value,
@@ -127,7 +122,6 @@ let acceptData = () => {
   localStorage.setItem("data", JSON.stringify(data));
 
   createTasks();
-
 };
 // this makes html card for each task
 
@@ -157,11 +151,15 @@ let createTasks = () => {
 };
 // delete function on trash icon
 // i want to make a confirm modal come up still working on
+
 let deleteTask = (e) => {
   e.parentElement.parentElement.remove();
   data.splice(e.parentElement.parentElement.id, 1);
   localStorage.setItem("data", JSON.stringify(data));
+  console.log(data);
+  
 };
+
 
 // eslint-disable-next-line no-unused-vars
 // edit is a concept that I am still working on
@@ -184,10 +182,6 @@ let resetForm = () => {
   data = JSON.parse(localStorage.getItem("data")) || [];
   createTasks();
 })();
-
-
-
-
 
 // clears all the inputs
 function clearForms() {
@@ -240,3 +234,14 @@ const close = document.querySelector("#btnClose");
 close.addEventListener("click", function () {
   clearForms();
 });
+
+
+// on background press change colour of background
+
+const body = document.querySelector("background");
+const changeBackground = document.querySelector("#changeBackground");
+changeBackground.addEventListener("click", function () {
+  body.classList.toggle("dark");
+}
+);
+
