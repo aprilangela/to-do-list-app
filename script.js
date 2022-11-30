@@ -1,5 +1,5 @@
-import "./modules/taskMaster.js";
-let data = [{}];
+  import "./modules/taskMaster.js";
+
 let form = document.getElementById("form");
 let taskNameInput = document.getElementById("name-task-input");
 let descriptionInput = document.getElementById("description-task-input");
@@ -185,3 +185,17 @@ function addNewTask() {
 }
 
 // open delete modal
+
+
+function updateClock() {
+  let now = new Date();
+  let date = now.toDateString();
+  let time = now.toLocaleTimeString();
+  document.getElementById("date").innerHTML = date;
+  document.getElementById("time").innerHTML = time;
+  setInterval(updateClock, 1000);
+
+}
+
+updateClock();
+

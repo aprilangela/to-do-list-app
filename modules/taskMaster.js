@@ -1,17 +1,6 @@
-let acceptData = () => {
-  data.push({
-    text: taskNameInput.value,
-    description: descriptionInput.value,
-    assignee: assignedToInput.value,
-    date: dueDateInput.value,
-    status: statusInput.value,
-  });
-  // write to a json file
+("use strict");
 
-  localStorage.setItem("data", JSON.stringify(data));
-
-  createTasks();
-};
+// make data object
 
 // this makes html card for each task renders it to the page
 
@@ -75,4 +64,26 @@ let markDone = (e) => {
   createTasks();
 };
 
-export { createTasks, acceptData, deleteTask , editTask, markDone};
+export { createTasks, data, deleteTask , editTask, markDone, acceptData};
+
+
+// make data object
+let data = {
+    _data: [],
+    acceptData: () => { 
+        data.push({
+            text: taskNameInput.value,
+            description: descriptionInput.value,
+            assignee: assignedToInput.value,
+            date: dueDateInput.value,
+            status: statusInput.value,
+        }   
+        
+        );
+        // write to a json file
+        localStorage.setItem("data", JSON.stringify(data));
+     
+        createTasks();
+    }
+    
+};
