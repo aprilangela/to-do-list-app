@@ -36,13 +36,46 @@
         id="time"
       ></span>
     </h5>
-    <div onclick="addNewTask()" id="addNew"  data-bs-toggle="modal" data-bs-target="#form">
+    <div
+      onclick="addNewTask()"
+      id="addNew"
+      data-bs-toggle="modal"
+      data-bs-target="#form"
+    >
       <span>Add New Task</span>
       <i class="fas fa-plus"></i>
     </div>
 
     <!-- Modal -->
-    <!-- Button trigger modal -->
+  <!-- Modal trigger button -->
+  <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#modalId">
+    Launch
+  </button>
+  
+  <!-- Modal Body -->
+  <!-- if you want to close by clicking outside the modal, delete the last endpoint:data-bs-backdrop and data-bs-keyboard -->
+  <div class="modal fade" id="modalId" tabindex="-1"  data-bs-keyboard="false" role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-sm" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalTitleId">Delete Task</h5>
+         
+        </div>
+ 
+        <div class="modal-footer">
+          <button onclick="" type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+          <button type="button" class="btn btn-danger">Yes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  <!-- Optional: Place to the bottom of scripts -->
+  <script>
+    const myModal = new bootstrap.Modal(document.getElementById('modalId'), options)
+  
+  </script>
 
     <!-- Modal -->
 
@@ -74,6 +107,7 @@
                 >
                 <input
                   type="text"
+                  maxlength="38"
                   placeholder="Task name must be at least 8 characters long"
                   class="form-control"
                   id="name-task-input"
@@ -86,6 +120,7 @@
                   >Description:</label
                 >
                 <textarea
+                  maxlength="46"
                   placeholder="Task description must be at least 15 characters long"
                   class="form-control"
                   id="description-task-input"
@@ -96,6 +131,7 @@
                     >Assigned To:</label
                   >
                   <input
+                    maxlength="38"
                     placeholder="Assignee must be at least 8 characters long"
                     type="text"
                     class="form-control"
@@ -133,7 +169,7 @@
             </div>
 
             <div class="modal-footer">
-              <button type="button" id="btnReset" class="btn btn-primary">
+              <button type="button" id="btnReset" class="btn btn-secondary">
                 Reset
               </button>
               <button type="submit" id="add" class="btn btn-primary">
@@ -155,7 +191,7 @@
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
     crossorigin="anonymous"
   ></script>
-  <script src="script.js" defer ></script>
-  
-  <script src="modules\updateClock.js" type="module"></script>
+  <script src="script.js" defer  type="module" ></script>
+
+  <script src="modules\updateClock.js"  ></script>
 </html>

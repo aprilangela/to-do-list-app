@@ -1,3 +1,4 @@
+import "./modules/taskMaster.js";
 let data = [{}];
 let form = document.getElementById("form");
 let taskNameInput = document.getElementById("name-task-input");
@@ -12,6 +13,9 @@ form.addEventListener("submit", (e) => {
   e.preventDefault();
   formValidation();
 });
+
+
+("use strict");
 
 // validation function for the form inputs and error messages for each input field if not valid and if valid it will add the task to the array and local storage and clear the form
 let formValidation = () => {
@@ -109,78 +113,8 @@ let formValidation = () => {
 };
 
 // this makes object and pushes it to array and local storage
-let acceptData = () => {
-  data.push({
-    text: taskNameInput.value,
-    description: descriptionInput.value,
-    assignee: assignedToInput.value,
-    date: dueDateInput.value,
-    status: statusInput.value,
-  });
-  // write to a json file
-
-  localStorage.setItem("data", JSON.stringify(data));
-
-  createTasks();
-};
-
-// this makes html card for each task
-
-let createTasks = () => {
-  tasks.innerHTML = "";
-  data.map((x, y) => {
-    return (tasks.innerHTML += `
-    <div class=card id=${y}>
-    <h5 class="card-header">Task name: ${x.text}</h5>
-    <div class="card-body">
-    <p class="card-text">Description: ${x.description} </p>
-      <p class="card-text">Due Date: ${x.date}</p>
-     
-      <p class="card-text">Assigned to: ${x.assignee}</p>
-      <p class="card-text">Status: ${x.status}</p>
-
-      <span class="options">
-      <i onClick= "editTask(this)" data-bs-toggle="modal" data-bs-target="#form" class="fas fa-edit"></i>
-      <i onClick ="deleteTask(this);createTasks()" class="fas fa-trash-alt"></i>
-      
-      <i onClick ="markDone(this)" class="fas fa-check"></i>
-    </div>
-  </div>
-        </div>
-    `);
-  });
-
-  resetForm();
-};
-
-let deleteTask = (e) => {
-  e.parentElement.parentElement.remove();
-  data.splice(e.parentElement.parentElement.id, 1);
-  localStorage.setItem("data", JSON.stringify(data));
-  console.log(data);
-};
-// edit task function
-let editTask = (e) => {
-  // modal title change to edit
-  let id = e.parentElement.parentElement.parentElement.id;
-  taskNameInput.value = data[id].text;
-  descriptionInput.value = data[id].description;
-  assignedToInput.value = data[id].assignee;
-  dueDateInput.value = data[id].date;
-  statusInput.value = data[id].status;
-  // change modal title to edit task
-  document.getElementById("Modal-label1").innerHTML = "Edit Task";
-
-}
 
 
-let markDone = (e) => {
-  let id = e.parentElement.parentElement.parentElement.id;
-  data[id].status = "Done";
-  localStorage.setItem("data", JSON.stringify(data));
-  createTasks();
-  
-};
 // run clearforms function when modal is closed
 
 // reset form  function
@@ -249,3 +183,5 @@ function addNewTask() {
   document.getElementById("Modal-label1").innerHTML = "Add New Task";
   clearForms();
 }
+
+// open delete modal
