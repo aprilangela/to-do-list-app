@@ -17,7 +17,7 @@ function updateClock() {
   let time = now.toLocaleTimeString();
   document.getElementById("date").innerHTML = date;
   document.getElementById("time").innerHTML = time;
-  setInterval(updateClock, 1000);
+  setTimeout(updateClock, 1000);
 
 }
 

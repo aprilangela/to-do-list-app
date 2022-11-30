@@ -11,26 +11,27 @@
     //create a card
     document.getElementById("task_list").innerHTML += `
 
-    <div class="card">
+    <div  class="card text-white bg-primary">
       <div class="card-body">
-        <h1 class="card-header">${task.task}</h1>
-
+      
+         
+        <h5 class="card-header">Task name: ${task.task}</h5>
         <div class="card-body">
         <p class="card-text">Description: ${task.description}</p>
           <p class="card-text">due date: ${task.dueDate}</p>
           <p class="card-text">Assigned to: ${task.assignedTo}</p> 
           <p class="card-text">Status: ${task.status}</p>
 
-          
+          <div class="options">  
           <i onclick="taskMaster.editTask(${task.id})" data-bs-toggle="modal" data-bs-target="#form" class="fas fa-edit"></i>
           <i onclick="deleteTask(${task.id})" class="fas fa-trash-alt"></i>
-          <i onClick ="taskMaster.updateTask" class="fas fa-check"></i>
+          <i onClick ="alertUser();" class="fas fa-check"></i>
 
           </div>
         </div>
       </div>
             </div>
-    </div>
+
     `;
   }
   
@@ -56,6 +57,7 @@ load () {
 
   getAllTasks() {
     return this.tasklist;
+
   }
   getTasksWithStatus(status)
   {
@@ -80,6 +82,9 @@ load () {
   
 
 
+alertUser() {
+   alert("Task has been added");
+}
 
 
 editTask(taskId) {
@@ -93,9 +98,6 @@ editTask(taskId) {
   document.getElementById("Modal-label1").innerHTML = "Edit Task";
   document.getElementById("submit").innerHTML = "Edit Task";
   document.getElementById("submit").onclick = function() {taskMaster.updateTask(taskId)};
-
-
 }
-
 
 }
