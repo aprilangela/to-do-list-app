@@ -6,7 +6,9 @@ export class taskMaster {
     this.tasklist = [];
     this.load();
   }
-
+  alertUser() {
+    alert("Task has been added");
+  }
   createHtmlCard(task) {
     //create a card
     document.getElementById("task_list").innerHTML += `
@@ -66,24 +68,14 @@ export class taskMaster {
       document.getElementById("(${task.id}icon").style.display = "none";
 
     }
-
-
-  }
-
-  updateTask(taskId) {
-    let task = this.tasklist.find(task => task.id === taskId);
-    task.status = "Done";
-    this.save();
-    location.reload();
-
   }
 
 
 
 
-  alertUser() {
-    alert("Task has been added");
-  }
+
+
+
 
 
   editTask(taskId) {
