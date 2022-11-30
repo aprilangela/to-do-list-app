@@ -1,15 +1,12 @@
-import { taskMaster } from './data.js';
+import { taskMaster } from "./data.js";
 let form = document.querySelector("#form");
 
 const tskmst = new taskMaster();
 
-
-
 console.log(tskmst.tasklist);
 tskmst.render();
 
-//add new task 
-
+//add new task
 
 function updateClock() {
   let now = new Date();
@@ -18,16 +15,9 @@ function updateClock() {
   document.getElementById("date").innerHTML = date;
   document.getElementById("time").innerHTML = time;
   setTimeout(updateClock, 1000);
-
 }
 
 updateClock();
-
-
-
-
-
-
 
 //  Input the data from form, Validate the data and store that data in object format in local storage
 form.addEventListener("submit", (e) => {
@@ -46,13 +36,12 @@ form.addEventListener("submit", (e) => {
   };
 
   if (taskName.length < 8) {
-    document.getElementById("name-task-input").focus
+    document.getElementById("name-task-input").focus;
     document.getElementById("name-task-error").innerHTML =
       "Please enter a task name thats at least 8 characters long";
     document.getElementById("name-task-input").style.borderColor = "red";
     document.getElementById("name-task-input").placeholder = "";
     document.getElementById("name-task-input").classList.add("is-invalid");
-
   } else {
     document.getElementById("name-task-input").classList.remove("is-invalid");
     document.getElementById("name-task-input").classList.add("is-valid");
@@ -68,7 +57,6 @@ form.addEventListener("submit", (e) => {
     document
       .getElementById("description-task-input")
       .classList.add("is-invalid");
-
   } else {
     document
       .getElementById("description-task-input")
@@ -87,7 +75,6 @@ form.addEventListener("submit", (e) => {
     document
       .getElementById("assigned-to-task-input")
       .classList.add("is-invalid");
-
   } else {
     document
       .getElementById("assigned-to-task-input")
@@ -103,7 +90,6 @@ form.addEventListener("submit", (e) => {
       "Due date must be today or later";
     document.getElementById("due-date-task-input").placeholder = "";
     document.getElementById("due-date-task-input").classList.add("is-invalid");
-
   } else {
     document
       .getElementById("due-date-task-input")
@@ -114,7 +100,6 @@ form.addEventListener("submit", (e) => {
   }
 
   if (taskStatus.length == "1") {
-
     document.getElementById("status-task-input").style.borderColor = "red";
     document.getElementById("status-task-error").innerHTML =
       "Please select a status";
@@ -125,7 +110,6 @@ form.addEventListener("submit", (e) => {
     document.getElementById("status-task-input").classList.add("is-valid");
     document.getElementById("status-task-input").style.borderColor = "green";
     document.getElementById("status-task-error").innerHTML = "";
-
   }
 
   if (
@@ -135,7 +119,6 @@ form.addEventListener("submit", (e) => {
     taskDueDate >= new Date().toISOString().split("T")[0] &&
     taskStatus.value != "0"
   ) {
-
     tskmst.addTask(task);
     tskmst.render();
     clearForms();
@@ -143,11 +126,6 @@ form.addEventListener("submit", (e) => {
     return true;
   }
 });
-
-
-
-
-
 
 function clearForms() {
   document.querySelector("#form").reset();

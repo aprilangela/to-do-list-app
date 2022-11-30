@@ -1,12 +1,12 @@
- export class taskMaster {
+export class taskMaster {
 
   //define object structure ID = int , task = string, status = string  DueDate date it is due  AssignedTo  description 
-//define a task 
+  //define a task 
   constructor() {
     this.tasklist = [];
     this.load();
   }
-  
+
   createHtmlCard(task) {
     //create a card
     document.getElementById("task_list").innerHTML += `
@@ -34,34 +34,33 @@
 
     `;
   }
-  
-  render()  {
+
+  render() {
     this.tasklist.forEach(task => this.createHtmlCard(task));
   }
 
-  addTask(task) { 
+  addTask(task) {
     this.tasklist.push(task);
-    this.save(); 
+    this.save();
   }
-save () {
-  localStorage.setItem("tasklist", JSON.stringify(this.tasklist));
-}
+  save() {
+    localStorage.setItem("tasklist", JSON.stringify(this.tasklist));
+  }
 
-load () {
-  this.tasklist = JSON.parse(localStorage.getItem("tasklist"));
-  if (this.tasklist == null) {
-    this.tasklist = [];
+  load() {
+    this.tasklist = JSON.parse(localStorage.getItem("tasklist"));
+    if (this.tasklist == null) {
+      this.tasklist = [];
+    }
   }
-}
 
 
   getAllTasks() {
     return this.tasklist;
 
   }
-  getTasksWithStatus(status)
-  {
-   this.tasklist.filter(task => task.status === status);
+  getTasksWithStatus(status) {
+    this.tasklist.filter(task => task.status === status);
 
     if (status == "Done") {
       document.getElementById("(${task.id}icon").style.display = "none";
@@ -76,28 +75,28 @@ load () {
     task.status = "Done";
     this.save();
     location.reload();
-  
-}
-  
-  
+
+  }
 
 
-alertUser() {
-   alert("Task has been added");
-}
 
 
-editTask(taskId) {
-  let task = this.tasklist.find(task => task.id === taskId);
-  document.getElementById("name-task-input").value = task.task;
-  document.getElementById("description-task-input").value = task.description;
-  document.getElementById("assigned-to-task-input").value = task.assignedTo;
-  document.getElementById("due-date-task-input").value = task.dueDate;
-  document.getElementById("status-task-input").value = task.status;
-  document.getElementById("id-task-input").value = task.id;
-  document.getElementById("Modal-label1").innerHTML = "Edit Task";
-  document.getElementById("submit").innerHTML = "Edit Task";
-  document.getElementById("submit").onclick = function() {taskMaster.updateTask(taskId)};
-}
+  alertUser() {
+    alert("Task has been added");
+  }
+
+
+  editTask(taskId) {
+    let task = this.tasklist.find(task => task.id === taskId);
+    document.getElementById("name-task-input").value = task.task;
+    document.getElementById("description-task-input").value = task.description;
+    document.getElementById("assigned-to-task-input").value = task.assignedTo;
+    document.getElementById("due-date-task-input").value = task.dueDate;
+    document.getElementById("status-task-input").value = task.status;
+    document.getElementById("id-task-input").value = task.id;
+    document.getElementById("Modal-label1").innerHTML = "Edit Task";
+    document.getElementById("submit").innerHTML = "Edit Task";
+    document.getElementById("submit").onclick = function () { taskMaster.updateTask(taskId) };
+  }
 
 }
