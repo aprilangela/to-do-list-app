@@ -1,4 +1,4 @@
-export class taskMaster {
+ export class taskMaster {
 
   //define object structure ID = int , task = string, status = string  DueDate date it is due  AssignedTo  description 
 //define a task 
@@ -13,7 +13,7 @@ export class taskMaster {
 
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title">${task.task}</h5>
+        <h1 class="card-header">${task.task}</h1>
 
         <div class="card-body">
         <p class="card-text">Description: ${task.description}</p>
@@ -23,9 +23,9 @@ export class taskMaster {
 
           
           <i onclick="taskMaster.editTask(${task.id})" data-bs-toggle="modal" data-bs-target="#form" class="fas fa-edit"></i>
-          <i id="(${task.id}icon" onClick ="deleteTask(${task.id})" class="fas fa-trash-alt"></i>
-          <i onClick ="" class="fas fa-check"></i>
-          
+          <i onclick="deleteTask(${task.id})" class="fas fa-trash-alt"></i>
+          <i onClick ="taskMaster.updateTask" class="fas fa-check"></i>
+
           </div>
         </div>
       </div>
@@ -56,7 +56,6 @@ load () {
 
   getAllTasks() {
     return this.tasklist;
-
   }
   getTasksWithStatus(status)
   {
@@ -70,14 +69,16 @@ load () {
 
   }
 
-  
-  
-   markDone(taskId) {
+  updateTask(taskId) {
     let task = this.tasklist.find(task => task.id === taskId);
     task.status = "Done";
     this.save();
-    
-  }
+    location.reload();
+  
+}
+  
+  
+
 
 
 
@@ -95,10 +96,6 @@ editTask(taskId) {
 
 
 }
-deleteTask(taskId) {
-  let task = this.tasklist.find(task => task.id === taskId);
-  this.tasklist.splice(task, 1);
-  this.save();
-}
-}
 
+
+}

@@ -27,6 +27,8 @@ updateClock();
 
 
 
+
+
 //  Input the data from form, Validate the data and store that data in object format in local storage
 form.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -50,6 +52,7 @@ form.addEventListener("submit", (e) => {
     document.getElementById("name-task-input").style.borderColor = "red";
     document.getElementById("name-task-input").placeholder = "";
     document.getElementById("name-task-input").classList.add("is-invalid");
+
   } else {
     document.getElementById("name-task-input").classList.remove("is-invalid");
     document.getElementById("name-task-input").classList.add("is-valid");
@@ -65,6 +68,7 @@ form.addEventListener("submit", (e) => {
     document
       .getElementById("description-task-input")
       .classList.add("is-invalid");
+
   } else {
     document
       .getElementById("description-task-input")
@@ -83,6 +87,7 @@ form.addEventListener("submit", (e) => {
     document
       .getElementById("assigned-to-task-input")
       .classList.add("is-invalid");
+
   } else {
     document
       .getElementById("assigned-to-task-input")
@@ -98,6 +103,7 @@ form.addEventListener("submit", (e) => {
       "Due date must be today or later";
     document.getElementById("due-date-task-input").placeholder = "";
     document.getElementById("due-date-task-input").classList.add("is-invalid");
+
   } else {
     document
       .getElementById("due-date-task-input")
@@ -113,6 +119,7 @@ form.addEventListener("submit", (e) => {
     document.getElementById("status-task-error").innerHTML =
       "Please select a status";
     document.getElementById("status-task-input").classList.add("is-invalid");
+    return false;
   } else {
     document.getElementById("status-task-input").classList.remove("is-invalid");
     document.getElementById("status-task-input").classList.add("is-valid");
