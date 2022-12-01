@@ -1,14 +1,12 @@
 export class taskMaster {
-
-  //define object structure ID = int , task = string, status = string  DueDate date it is due  AssignedTo  description 
-  //define a task 
+    'use strict'
+// the object that stores the data and has methods to manipulate the data
   constructor() {
     this.tasklist = [];
     this.load();
   }
-  alertUser() {
-    alert("Task has been added");
-  }
+
+  // this makes the html card 
   createHtmlCard(task) {
     //create a card
     document.getElementById("task_list").innerHTML += `
@@ -26,8 +24,7 @@ export class taskMaster {
 
           <div class="options">  
           <i onclick="taskMaster.editTask(${task.id})" data-bs-toggle="modal" data-bs-target="#form" class="fas fa-edit"></i>
-          <i onclick="deleteTask(${task.id})" class="fas fa-trash-alt"></i>
-          <i onClick ="alertUser();" class="fas fa-check"></i>
+            <i onclick="deleteTask(this)" class="fas fa-trash-alt"></i>
 
           </div>
         </div>
@@ -37,17 +34,26 @@ export class taskMaster {
     `;
   }
 
+
+
+// this renders the html card 
   render() {
     this.tasklist.forEach(task => this.createHtmlCard(task));
   }
+// this passes the data from valdate/ input forms to the task object
 
+ alertUser() {
+    alert("Alert");
+    }
   addTask(task) {
     this.tasklist.push(task);
     this.save();
   }
+  // this saves the data to local storage
   save() {
     localStorage.setItem("tasklist", JSON.stringify(this.tasklist));
   }
+// this loads the data from local storage
 
   load() {
     this.tasklist = JSON.parse(localStorage.getItem("tasklist"));
@@ -55,8 +61,6 @@ export class taskMaster {
       this.tasklist = [];
     }
   }
-
-
   getAllTasks() {
     return this.tasklist;
 
@@ -66,29 +70,15 @@ export class taskMaster {
 
     if (status == "Done") {
       document.getElementById("(${task.id}icon").style.display = "none";
-
     }
   }
 
-
-
-
-
-
-
-
-
-  editTask(taskId) {
-    let task = this.tasklist.find(task => task.id === taskId);
-    document.getElementById("name-task-input").value = task.task;
-    document.getElementById("description-task-input").value = task.description;
-    document.getElementById("assigned-to-task-input").value = task.assignedTo;
-    document.getElementById("due-date-task-input").value = task.dueDate;
-    document.getElementById("status-task-input").value = task.status;
-    document.getElementById("id-task-input").value = task.id;
-    document.getElementById("Modal-label1").innerHTML = "Edit Task";
-    document.getElementById("submit").innerHTML = "Edit Task";
-    document.getElementById("submit").onclick = function () { taskMaster.updateTask(taskId) };
-  }
+    deleteTask(task) {
+    this.tasklist.splice(this.tasklist.indexOf(task),1);
+    this.save();
+    this.render();
 
 }
+}
+
+
