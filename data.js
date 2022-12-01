@@ -25,6 +25,7 @@ export class taskMaster {
           <div class="options">  
           <i onclick="taskMaster.editTask(${task.id})" data-bs-toggle="modal" data-bs-target="#form" class="fas fa-edit"></i>
             <i onclick="deleteTask(this)" class="fas fa-trash-alt"></i>
+            <i onclick="markAsDone(this)" class="fas fa-check"></i>
 
           </div>
         </div>
@@ -40,7 +41,7 @@ export class taskMaster {
   render() {
     this.tasklist.forEach(task => this.createHtmlCard(task));
   }
-// this passes the data from valdate/ input forms to the task object
+
 
  alertUser() {
     alert("Alert");
@@ -77,8 +78,14 @@ export class taskMaster {
     this.tasklist.splice(this.tasklist.indexOf(task),1);
     this.save();
     this.render();
-
 }
+
+  markAsDone(task) {
+    task.status = "Done";
+    this.save();
+    this.render();
+  }
+  
 }
 
 
