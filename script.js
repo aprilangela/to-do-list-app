@@ -5,8 +5,7 @@ const tskmst = new taskMaster();
 
 console.log(tskmst.tasklist);
 tskmst.render();
-'use strict'
-
+("use strict");
 
 function updateClock() {
   let now = new Date();
@@ -35,13 +34,11 @@ form.addEventListener("submit", (e) => {
   };
 
   if (taskName.length < 8) {
-    document.getElementById("name-task-input").focus
     document.getElementById("name-task-error").innerHTML =
       "Please enter a task name thats at least 8 characters long";
     document.getElementById("name-task-input").style.borderColor = "red";
     document.getElementById("name-task-input").placeholder = "";
     document.getElementById("name-task-input").classList.add("is-invalid");
-
   } else {
     document.getElementById("name-task-input").classList.remove("is-invalid");
     document.getElementById("name-task-input").classList.add("is-valid");
@@ -57,7 +54,6 @@ form.addEventListener("submit", (e) => {
     document
       .getElementById("description-task-input")
       .classList.add("is-invalid");
-
   } else {
     document
       .getElementById("description-task-input")
@@ -76,7 +72,6 @@ form.addEventListener("submit", (e) => {
     document
       .getElementById("assigned-to-task-input")
       .classList.add("is-invalid");
-
   } else {
     document
       .getElementById("assigned-to-task-input")
@@ -92,7 +87,6 @@ form.addEventListener("submit", (e) => {
       "Due date must be today or later";
     document.getElementById("due-date-task-input").placeholder = "";
     document.getElementById("due-date-task-input").classList.add("is-invalid");
-
   } else {
     document
       .getElementById("due-date-task-input")
@@ -103,7 +97,6 @@ form.addEventListener("submit", (e) => {
   }
 
   if (taskStatus.length == "1") {
-
     document.getElementById("status-task-input").style.borderColor = "red";
     document.getElementById("status-task-error").innerHTML =
       "Please select a status";
@@ -114,7 +107,6 @@ form.addEventListener("submit", (e) => {
     document.getElementById("status-task-input").classList.add("is-valid");
     document.getElementById("status-task-input").style.borderColor = "green";
     document.getElementById("status-task-error").innerHTML = "";
-
   }
 
   if (
@@ -124,7 +116,6 @@ form.addEventListener("submit", (e) => {
     taskDueDate >= new Date().toISOString().split("T")[0] &&
     taskStatus.value != "0"
   ) {
-
     tskmst.addTask(task);
     tskmst.render();
     clearForms();
@@ -132,7 +123,6 @@ form.addEventListener("submit", (e) => {
     return true;
   }
 });
-
 
 //  clears the form after submit
 
@@ -145,5 +135,3 @@ const reset = document.querySelector("#btnReset");
 reset.addEventListener("click", function () {
   clearForms();
 });
-
-
