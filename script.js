@@ -137,18 +137,21 @@ let createTasks = () => {
     return (tasks.innerHTML += `
     <div class=card ${x.color} id=${y}>
     <h5 class="card-header">Task name: ${x.text}</h5>
-    <div class="card-body">
-    <p class="card-text">Description: ${x.description} </p>
-      <p class="card-text">Due Date: ${x.date}</p>
-     
-      <p class="card-text">Assigned to: ${x.assignee}</p>
-      <p class="card-text">Status: ${x.status}</p>
+      <div class="card-body">
+      <p class="card-text">Description: ${x.description} </p>
+        <p class="card-text">Due Date: ${x.date}</p>
+      
+        <p class="card-text">Assigned to: ${x.assignee}</p>
+        <p class="card-text">Status: ${x.status}</p>
 
-      <span class="options">
-      <i onClick= "editTask(this)" data-bs-toggle="modal" data-bs-target="#form" class="fas fa-edit"></i>
-      <i onClick ="deleteTask(this);createTasks()" class="fas fa-trash-alt"></i>
+        <span class="options">
+        <i onClick= "editTask(this)" data-bs-toggle="modal" data-bs-target="#form" class="fas fa-edit"></i> 
+        <i onClick="deleteTask(this);createTasks()" class="fas fa-trash-alt"></i>      
+        
+        <i onclick="markAsDone(this)" class="fas fa-check"></i>
+        
+      </div>
     </div>
-  </div>
         </div>
     `);
   });
@@ -240,5 +243,3 @@ const close = document.querySelector("#btnClose");
 close.addEventListener("click", function () {
   clearForms();
 });
-
-
