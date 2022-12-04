@@ -51,6 +51,7 @@ body {
   display: grid;
   grid-template-columns: 1fr;
   gap: 14px;
+}
 
 h1{
     color: rgba(247, 248, 250, 0.901);
@@ -79,3 +80,10 @@ h1{
   cursor: pointer;
 }
 
+footer {
+  position: fixed; 
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  
+}

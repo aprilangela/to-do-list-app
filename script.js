@@ -147,6 +147,7 @@ let createTasks = () => {
       <span class="options">
       <i onClick= "editTask(this)" data-bs-toggle="modal" data-bs-target="#form" class="fas fa-edit"></i>
       <i onClick ="deleteTask(this);createTasks()" class="fas fa-trash-alt"></i>
+      <i onclick="markAsDone(this)" class="fas fa-check"></i>
     </div>
   </div>
         </div>
@@ -174,6 +175,16 @@ let editTask = (e) => {
   statusInput.value = selectedTask.children[4].innerHTML;
   deleteTask(e);
 };
+
+// markdone function 
+let markAsDone = (e) => {
+  let id = e.parentElement.parentElement.parentElement.id;
+  data[id].status = "Done";
+  localStorage.setItem("data", JSON.stringify(data));
+  createTasks();
+  
+  
+ }
 
 // reset form  function
 let resetForm = () => {
