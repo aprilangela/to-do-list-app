@@ -137,8 +137,8 @@ let createTasks = () => {
     return (tasks.innerHTML += `
     <div class=card ${x.color} id=${y}>
     <h5 class="card-header">Task name: ${x.text}</h5>
-    <div class="card-body">
-    <p class="card-text">Description: ${x.description} </p>
+      <div class="card-body">
+      <p class="card-text">Description: ${x.description} </p>
       <p class="card-text">Due Date: ${x.date}</p>
      
       <p class="card-text">Assigned to: ${x.assignee}</p>
@@ -150,12 +150,14 @@ let createTasks = () => {
       <i onclick="markAsDone(this)" class="fas fa-check"></i>
     </div>
   </div>
-        </div>
+        
     `);
   });
 
   resetForm();
 };
+
+
 // delete function on trash icon
 // i want to make a confirm modal come up still working on
 let deleteTask = (e) => {
@@ -168,13 +170,15 @@ let deleteTask = (e) => {
 // edit is a concept that I am still working on
 let editTask = (e) => {
   let selectedTask = e.parentElement.parentElement;
-  taskNameInput.value = selectedTask.children[0].innerHTML;
-  descriptionInput.value = selectedTask.children[2].innerHTML;
-  assignedToInput.value = selectedTask.children[3].innerHTML;
+  // taskNameInput.value = selectedTask.children[0].innerHTML;
+  descriptionInput.value = selectedTask.children[0].innerHTML;
+  assignedToInput.value = selectedTask.children[2].innerHTML;
   dueDateInput.value = selectedTask.children[1].innerHTML;
-  statusInput.value = selectedTask.children[4].innerHTML;
+  statusInput.value = selectedTask.children[3].innerHTML;
   deleteTask(e);
 };
+
+
 
 // markdone function 
 let markAsDone = (e) => {
@@ -182,9 +186,10 @@ let markAsDone = (e) => {
   data[id].status = "Done";
   localStorage.setItem("data", JSON.stringify(data));
   createTasks();
-  
-  
- }
+
+}
+
+
 
 // reset form  function
 let resetForm = () => {
